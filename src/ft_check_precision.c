@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:36:28 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/15 11:55:43 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/15 20:34:26 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_check_precision(t_format *format)
 {
+	format->point = 0;
 	format->precision = 0;
 	if (*format->fstring == '.')
 	{
@@ -28,7 +29,8 @@ void	ft_check_precision(t_format *format)
 			format->precision = va_arg(format->arguments, int);
 			if (format->precision < 0)
 			{
-				format->precision = -1;
+				format->point = 0;
+				format->precision = 0;
 			}
 			format->fstring++;
 		}

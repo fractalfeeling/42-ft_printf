@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:46:50 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/15 14:34:22 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/15 17:09:33 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_print_di(t_format *format)
 	nb *= -neg;
 	str = ft_itoa(nb);
 	len = ft_strlen(str);
-	if (*str == '0' && format->precision == 0 && format->point == 1)
+	if (*str == '0' && format->point == 1 && format->precision == 0)
 		len = 0;
 	if (neg == 1 || format->flag[e_plus] == '1')
 		len++;

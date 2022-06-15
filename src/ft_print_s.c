@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:57:46 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/06 17:39:48 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/15 21:15:39 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_print_s(t_format *format)
 	else
 	{
 		if (!IS_MACOS && (format->precision >= 0 && format->precision < 6)
-			&& (ft_strcmp(tmp, "(null)") == 0))
+			&& (ft_strncmp(tmp, "(null)", 6) == 0))
 			format->precision = 0;
 		str = ft_substr(tmp, 0, format->precision);
 	}

@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:46:50 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/15 14:43:15 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/15 21:13:07 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,31 +61,17 @@ static void	u_handle_width(t_format *format, int len)
 	}
 }
 
-static int	handle_u(t_format *format, char *str, int len)
+static void	handle_u(t_format *format, char *str, int len, int diff)
 {
-	int	diff;
-
-	diff = format->precision - len;
-	if (diff < 0)
-		diff = 0;
-	len += diff;
 	if (format->point == 1)
 		format->flag[e_zero] = '0';
-	if (format->flag[e_zero] == '0' && format->flag[e_minus] == '0')
+	if (format->flag[e_minus] != '1')
 		u_handle_width(format, len);
-	if (format->flag[e_space] == '1')
-		ft_putchar_fd(' ', 1);
-	if (format->flag[e_plus] == '1')
-		ft_putchar_fd('+', 1);
-	if (format->flag[e_zero] == '1')
-		u_handle_width(format, len);
-	else
-		while (diff-- > 0)
-			ft_putchar_fd('0', 1);
+	while (diff-- > 0)
+		ft_putchar_fd('0', 1);
 	ft_putstr_fd(str, 1);
 	if (format->flag[e_minus] == '1')
 		u_handle_width(format, len);
-	return (len);
 }
 
 void	ft_print_u(t_format *format)
@@ -93,16 +79,18 @@ void	ft_print_u(t_format *format)
 	char			*str;
 	unsigned int	nb;
 	int				len;
+	int				diff;
 
 	nb = va_arg(format->arguments, unsigned int);
 	str = ft_uitoa(nb);
 	len = ft_strlen(str);
-	if (*str == '0' && format->precision == 0 && format->point == 1)
+	if (nb == 0 && format->point == 1 && format->precision == 0)
 		len = 0;
-	if (format->flag[e_space] == '1' || format->flag[e_plus] == '1')
-		len++;
-	if (len > 0)
-		len = handle_u(format, str, len);
+	diff = format->precision - len;
+	if (diff < 0)
+		diff = 0;
+	len += diff;
+	handle_u(format, str, len, diff);
 	format->total += len;
 	free(str);
 	format->fstring++;
