@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:39:37 by lwee              #+#    #+#             */
-/*   Updated: 2022/03/30 17:56:25 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/16 21:44:38 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	while (*lst)
+	tmp = *lst;
+	while (tmp)
 	{
-		tmp = (*lst)->next;
+		tmp = tmp->next;
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}

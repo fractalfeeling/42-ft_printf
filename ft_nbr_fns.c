@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_nbr_fns.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 16:08:39 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/16 20:49:50 by lwee             ###   ########.fr       */
+/*   Created: 2022/06/18 06:13:30 by lwee              #+#    #+#             */
+/*   Updated: 2022/06/18 07:40:51 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_nbrlenll(long long nb)
 {
-	t_list	*list;
+	int	n;
 
-	list = malloc(sizeof(t_list));
-	if (list == NULL)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	n = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		nb *= -1;
+	while (nb)
+	{
+		nb /= 10;
+		n++;
+	}
+	return (n);
+}
+
+void	ft_putnbrll(long long nb)
+{
+	if (nb < 0)
+		nb *= -1;
+	if (nb > 9)
+		ft_putnbrll(nb / 10);
+	ft_putchar_fd(nb % 10 + '0', 1);
 }

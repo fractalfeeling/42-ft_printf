@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:18:57 by lwee              #+#    #+#             */
-/*   Updated: 2022/03/30 17:35:35 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/16 21:42:28 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	(del)(lst->content);
+	del(lst->content);
 	free(lst);
+	lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 13:57:44 by lwee              #+#    #+#             */
-/*   Updated: 2022/03/23 15:29:59 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/16 22:02:33 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	**ft_split(char const *s, char c)
 
 	count = ft_wordcount(s, c);
 	array = malloc(sizeof(char *) * (count + 1));
-	if (!array)
+	if (array == NULL)
 		return (NULL);
 	i = -1;
 	while (++i < count)

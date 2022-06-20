@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:18:11 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/15 20:25:08 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/18 09:36:54 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ void	ft_check_specifier(t_format *format)
 	else if (*format->fstring == 'x' || *format->fstring == 'X')
 		ft_print_x(format);
 	else if (*format->fstring == '%')
+	{
 		ft_putchar_fd('%', 1);
-	else
-		format->total = -9999;
+		format->total++;
+		format->fstring++;
+	}
 }

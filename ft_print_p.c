@@ -6,13 +6,13 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:28:31 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/15 13:15:05 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/18 09:25:35 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	p_itoa_hex(unsigned long long nb)
+static void	p_itoa_hex(size_t nb)
 {
 	if (nb > 15)
 	{
@@ -33,8 +33,8 @@ static void	p_handle_width(t_format *format, int addrlen)
 	while (format->width > addrlen)
 	{
 		ft_putchar_fd(' ', 1);
+		format->width--;
 		format->total++;
-		format->width++;
 	}
 }
 
@@ -63,12 +63,12 @@ static void	handle_p(t_format *format, unsigned long long addr, int addrlen,
 
 void	ft_print_p(t_format *format)
 {
-	unsigned long long	addr;
-	unsigned long long	tmp;
-	int					addrlen;
-	int					diff;
+	size_t	addr;
+	size_t	tmp;
+	int		addrlen;
+	int		diff;
 
-	addr = (unsigned long long)va_arg(format->arguments, void *);
+	addr = (size_t)va_arg(format->arguments, void *);
 	tmp = addr;
 	addrlen = 2;
 	while (tmp > 0)
@@ -80,9 +80,9 @@ void	ft_print_p(t_format *format)
 	if (diff < 0)
 		diff = 0;
 	if (addr == 0 && IS_MACOS)
-		addrlen = diff + 3;
+		addrlen = diff + 1;
 	else if (addr == 0)
-		addrlen = 5;
+		addrlen += 3;
 	else
 		addrlen = diff + addrlen;
 	handle_p(format, addr, addrlen, diff);
