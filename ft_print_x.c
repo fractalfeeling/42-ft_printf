@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:46:50 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/18 09:57:26 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/20 14:45:57 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,13 +104,13 @@ void	ft_print_x(t_format *format)
 		len = 0;
 		*str = '\0';
 	}
+	diff = format->precision - len;
+	if (diff < 0)
+		diff = 0;
 	if (nb == 0)
 		format->flag[e_hash] = '0';
 	if (format->flag[e_hash] == '1')
 		len += 2;
-	diff = format->precision - len;
-	if (diff < 0)
-		diff = 0;
 	len += diff;
 	handle_x(format, str, len, diff);
 	format->total += len;

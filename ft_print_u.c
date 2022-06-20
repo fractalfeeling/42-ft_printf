@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:46:50 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/18 09:57:13 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/20 15:18:15 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ void	ft_print_u(t_format *format)
 	len += diff;
 	handle_u(format, str, len, diff);
 	format->total += len;
-	free(str);
 	format->fstring++;
+	free(str);
 }

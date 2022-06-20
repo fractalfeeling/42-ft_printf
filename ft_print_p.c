@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:28:31 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/18 09:25:35 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/20 14:50:49 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,10 @@ void	ft_print_p(t_format *format)
 	if (diff < 0)
 		diff = 0;
 	if (addr == 0 && IS_MACOS)
-		addrlen = diff + 1;
+		addrlen += 1;
 	else if (addr == 0)
 		addrlen += 3;
-	else
-		addrlen = diff + addrlen;
+	addrlen = diff + addrlen;
 	handle_p(format, addr, addrlen, diff);
 	format->total = format->total + addrlen;
 	format->fstring++;

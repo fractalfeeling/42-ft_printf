@@ -6,7 +6,7 @@
 #    By: lwee <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 23:29:11 by lwee              #+#    #+#              #
-#    Updated: 2022/06/18 07:40:16 by lwee             ###   ########.fr        #
+#    Updated: 2022/06/20 15:13:42 by lwee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Werror -Wextra -c
 PRINTF_FUNC		= ft_check_flags ft_check_width ft_print_di ft_print_p \
 				ft_print_x ft_check_precision  ft_eval_format  \
 				ft_printf ft_print_s ft_check_specifier ft_print_c \
-				ft_print_u ft_nbr_fns
+				ft_print_u ft_print_pct ft_nbr_fns
 LIBFT_FUNC		= ft_atoi ft_itoa ft_lstnew ft_putendl_fd ft_strlcat \
 				ft_substr ft_bzero ft_putnbr_fd ft_strlcpy \
 				ft_tolower ft_calloc ft_memchr ft_putstr_fd ft_strlen \

@@ -6,14 +6,14 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 19:32:21 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/18 07:35:17 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/20 15:09:30 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -58,6 +58,7 @@ void	ft_print_p(t_format *format);
 void	ft_print_di(t_format *format);
 void	ft_print_u(t_format *format);
 void	ft_print_x(t_format *format);
+void	ft_print_pct(t_format *format);
 
 void	ft_putnbrll(long long nb);
 int		ft_nbrlenll(long long nb);

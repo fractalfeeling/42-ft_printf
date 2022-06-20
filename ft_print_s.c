@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:57:46 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/16 23:48:39 by lwee             ###   ########.fr       */
+/*   Updated: 2022/06/20 13:58:19 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_print_s(t_format *format)
 	int		len;
 
 	tmp = va_arg(format->arguments, char *);
+	str = tmp;
 	if (tmp == NULL)
 		tmp = "(null)";
 	if (format->point == 0)
