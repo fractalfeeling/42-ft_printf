@@ -1,7 +1,7 @@
 # 42-ft_print
 
 ## Definition
-Recode of printf from the C Standard Library. Learn what is and how to implement variadic functions. This function will be reused in future 42 projects.
+Recode of printf from the C standard library. Learn what is and how to implement variadic functions. This function will be reused in future 42 projects.
 
 ## Score
 ![Score](https://github.com/fractalfeeling/uploads/blob/4e5f7f060cdb8824ca8373d4aa3c65d795a3464b/images/score_bonus.png)
