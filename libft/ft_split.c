@@ -6,7 +6,7 @@
 /*   By: lwee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 13:57:44 by lwee              #+#    #+#             */
-/*   Updated: 2022/06/16 22:02:33 by lwee             ###   ########.fr       */
+/*   Updated: 2022/07/06 06:02:23 by lwee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static char	*ft_initstr(char const *s, char c)
 	while (s[i] && s[i] != c)
 		i++;
 	str = malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
+		return (NULL);
 	ft_strlcpy(str, s, i + 1);
 	return (str);
 }
@@ -62,8 +64,8 @@ char	**ft_split(char const *s, char c)
 		array[i] = ft_initstr(s, c);
 		if (!array[i])
 		{
-			while (i > 0)
-				free(array[i--]);
+			while (i-- > 0)
+				free(array[i]);
 			free(array);
 			return (NULL);
 		}
