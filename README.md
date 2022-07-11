@@ -8,3 +8,7 @@ Recode of printf from the C standard library. Learn what is and how to implement
 
 ## Documentation
 [ft_printf Subject Document](https://github.com/fractalfeeling/uploads/blob/706153dcc01349465c865a07985236d4a7bbe354/docs/ft_printf.pdf)
+
+## Resources
+* Great [outline](https://github.com/edithturn/42-silicon-valley-ft-printf) of the project by *edithturn*. (Project requirements have since been changed and updated)
+* [francinette](https://github.com/xicodomingues/francinette) tester by *xicodomingues*.
