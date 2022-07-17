@@ -16,7 +16,7 @@ This ft_printf project is designed with bonuses in mind from the start, structs 
 | ``d``,``i`` | Integer |
 | ``p`` | Pointer address in hexadecimal |
 | ``u`` | Unsigned integer |
-| ``x`` | Unsigned hexadecimal integer (lowecase) |
+| ``x`` | Unsigned hexadecimal integer (lowercase) |
 | ``X`` | Unsigned hexadecimal integer (uppercase) |
 | ``%`` | The % character |
 
