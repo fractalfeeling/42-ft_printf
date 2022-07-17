@@ -1,14 +1,42 @@
-# 42-ft_print
+# ft_printf
+*Because ft_putnbr() and ft_putstr() aren’t enough*
 
-## Definition
+## Introduction
 Recode of printf from the C standard library. Learn what is and how to implement variadic functions. This function will be reused in future 42 projects.
+
+## Outline
+This ft_printf project is designed with bonuses in mind from the start, structs will be used to store attributes of flags. ft_printf will work with the following flags and specifiers.
+
+* Specifiers
+
+| Specifier | Output |
+| :-------: | :---------: |
+| ``c`` | Character |
+| ``s`` | String |
+| ``d``,``i`` | Integer |
+| ``p`` | Pointer address in hexadecimal |
+| ``u`` | Unsigned integer |
+| ``x`` | Unsigned hexadecimal integer (lowecase) |
+| ``X`` | Unsigned hexadecimal integer (uppercase) |
+| ``%`` | The % character |
+
+* Flags (Bonus)
+
+| Flag | Description |
+| :--: | :---------: |
+| (width) | The minimum width of the printed conversion |
+| (precision) | The minimum number of characters in the printed conversion |
+| ``-`` | Left aligns the printed conversion |
+| ``0`` | Pads printed conversion with zeroes instead of spaces |
+| ``.`` | Separates the width and precision variables |
+| ``#`` | Prepends 0x or 0X to hexadecimal coversions |
+| `` `` | A blank is placed before a positive number produced by a signed conversion |
+| ``+`` | Places a sign (+ or -) before a number produced by a signed conversion|
 
 ## Score
 ![Score](https://github.com/fractalfeeling/uploads/blob/4e5f7f060cdb8824ca8373d4aa3c65d795a3464b/images/score_bonus.png)
 
-## Documentation
-[ft_printf Subject Document](https://github.com/fractalfeeling/uploads/blob/706153dcc01349465c865a07985236d4a7bbe354/docs/ft_printf.pdf)
-
 ## Resources
+* [ft_printf subject document](https://github.com/fractalfeeling/uploads/blob/706153dcc01349465c865a07985236d4a7bbe354/docs/ft_printf.pdf)
 * Great [outline](https://github.com/edithturn/42-silicon-valley-ft-printf) of the project by *edithturn*. (Project requirements have since been changed and updated)
 * [francinette](https://github.com/xicodomingues/francinette) tester by *xicodomingues*.
