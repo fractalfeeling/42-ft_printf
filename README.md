@@ -34,7 +34,7 @@ This ft_printf project is designed with bonuses in mind from the start, structs 
 | ``+`` | Places a sign (+ or -) before a number produced by a signed conversion|
 
 ## Workflow
-[![ft_printf workflow](https://github.com/fractalfeeling/uploads/blob/b8a0ae2dcb7dfbae58886c5fcea18d41767acaa2/images/ft_printf_workflow.png)
+![ft_printf workflow](https://github.com/fractalfeeling/uploads/blob/b8a0ae2dcb7dfbae58886c5fcea18d41767acaa2/images/ft_printf_workflow.png)
 
 ## Score
 [![lwee's 42 ft_printf Score](https://badge42.vercel.app/api/v2/cl5pppwsq001109mdiigy33za/project/2565622)](https://github.com/JaeSeoKim/badge42)
