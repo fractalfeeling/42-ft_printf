@@ -37,7 +37,7 @@ This ft_printf project is designed with bonuses in mind from the start, structs 
 ![ft_printf workflow](https://github.com/fractalfeeling/uploads/blob/b8a0ae2dcb7dfbae58886c5fcea18d41767acaa2/images/ft_printf_workflow.png)
 
 ## Score
-[![lwee's 42 ft_printf Score](https://badge42.vercel.app/api/v2/cl5pppwsq001109mdiigy33za/project/2565622)](https://github.com/JaeSeoKim/badge42)
+![lwee's Score](https://github.com/fractalfeeling/uploads/blob/master/images/score_bonus.png)
 
 ## Resources
 * [ft_printf subject document](https://github.com/fractalfeeling/uploads/blob/706153dcc01349465c865a07985236d4a7bbe354/docs/ft_printf.pdf)
